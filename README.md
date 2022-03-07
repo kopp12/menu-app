@@ -1,16 +1,19 @@
 # menu-app
-class   BestSoccerForwards{
+class   BestSoccerForwards{   
     constructor(forwards, assist,goals){
         this.forwards = forwards;
         this.assist =  assist;
         this.goals = goals;
 
     }
-decribe(){
-return `${this.forwards} has ${this.goals} and this ${this.assist}`
+describe(){
+return `${this.forwards} has ${this.goals} goals and this ${this.assist} assist`
 }
 }
-
+const bestforward1 =new BestSoccerForwards('Ronaldo','6','40')
+bestforward1.assist = 9
+console.log(bestforward1.describe())
+console.log(bestforward1)
 class Menu{
     constructor(){
         this.bestSoccerForwards = [];
@@ -38,29 +41,29 @@ mainMenu(){
                 this.mainMenu();
 }
 }
-    addForward(newForward) {
-        const newForward =  new Forwards(prompt("enter new forward"));
- this.bestSoccerForwards.push(newForward);
- console.log(newForward);
+    addForward() {
+         const newForward = prompt("enter new forward: ");
+        this.bestSoccerForwards.push(newForward);
+ console.log(newForward)
+ ;
  alert(`this player has been added`);
-this.mainMenu();
-}
+this.mainMenu();}
 
 deleteForward(){
  let index =prompt(`Enter Forward to delete`)
  if(index >-1 && index< this.bestSoccerForwards.length){
-     this.bestForwards.splice(index,1)
+     this.bestSoccerForwards.splice(index,1)
  }
 alert(`this player has been deleted`);
 this.mainMenu() 
 }
 viewForwards(){
     let allForwards = " ";
-for(let i =0; i<this.bestSoccerForwards.length;i++){
-     allForwards += i + ')'+ this.bestSoccerForwards.decribe() + "\n";;
+for(let i =0; i<this.bestSoccerForwards.length;i++){   
+    allForwards +=[i] + ')'+ this.bestSoccerForwards[i] + "\n";;
 }
-alert(allForwards);
- this.mainMenu
+alert(allForwards)
+ this.mainMenu()
 }
 
 exitProgram(){
